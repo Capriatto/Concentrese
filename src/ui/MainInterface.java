@@ -5,6 +5,8 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author coder
@@ -15,7 +17,7 @@ public class MainInterface extends javax.swing.JFrame {
      * Crear un nuevo formulario de MainInterface
      */
     public MainInterface() {
-        this.setLocationRelativeTo(null);
+        this.setBounds(450, 250, 0, 0);
         initComponents();
     }
 
@@ -39,12 +41,27 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel1.setText("CONCÉNTRESE");
 
         jButton1.setText("Jugar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Registrar Jugador");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Ver Resultados");
 
         jButton4.setText("Créditos");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,6 +98,27 @@ public class MainInterface extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+      String answer = JOptionPane.showInputDialog(this, 
+         "Ingresa tu código de jugador", 
+         "¡Casi listos para iniciar!", JOptionPane.INFORMATION_MESSAGE);
+        System.out.println(answer);
+     
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        RegistrarJugador registrarJugador = new RegistrarJugador();
+        this.dispose();
+        registrarJugador.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+         Creditos creditos = new Creditos();
+         creditos.setLocationRelativeTo(this);
+         creditos.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
